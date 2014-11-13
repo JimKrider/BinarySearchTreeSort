@@ -33,15 +33,15 @@ public class Intcoll6client
     }*/
     System.out.println("\nThe values in collection P are:"); 
     P.insert(10);
-    P.insert(1);
     P.insert(9);
-    P.insert(2);
     P.insert(8);
-    P.insert(3);
     P.insert(7);
-    P.insert(4);
     P.insert(6);
     P.insert(5);
+    P.insert(4);
+    P.insert(3);
+    P.insert(2);
+    P.insert(1);
     Q.btSort(P);
     System.out.println("\nThe values in collection P after it was omitted are:");
     P.print();

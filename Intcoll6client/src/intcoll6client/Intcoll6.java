@@ -163,11 +163,11 @@ public class Intcoll6 {
     public void btSort(Intcoll6 obj)
     {
         int[] sort = new int[obj.howmany];   
-        toarray(obj.c,sort,0);//Sorts the tree like insertion sort
-        //quicksort(sort,0,sort.length-1);//Sorts the tree using quick
+        toarray(obj.c,sort,0);
+        //quicksort(sort,0,sort.length-1);      //Sorts the tree using quick
         c = sortedArrayToBST(sort,0,sort.length-1);//sets this.c to the sorted tree
-    
-   }
+      
+    }
     
     private btNode sortedArrayToBST(int[] a, int start, int end)
     {
@@ -179,7 +179,7 @@ public class Intcoll6 {
         if(mid < end)   root.right    = sortedArrayToBST(a,mid+1,end);
        
        return root;
-   }
+    }/* Cuts the array in half then sorts. */
     
     public static void quicksort(int a[], int l, int h)
     {
@@ -189,7 +189,7 @@ public class Intcoll6 {
             quicksort(a,   l, p-1);
             quicksort(a, p+1, h);
         }
-    }
+    }/* Not Being used Currently Fix quickSortBst first */
     
     public static int partition( int data[], int l, int h)
     {
@@ -212,7 +212,7 @@ public class Intcoll6 {
         }       
         data[upper] = firsthigh;
         return(upper);
-    }
+    }/* Not Being used Currently Fix quickSortBst first */
     
     private btNode quickSortBST(int a[], int start, int end)
     {
@@ -221,13 +221,13 @@ public class Intcoll6 {
        if((end - start) > 0){
        p = partition(a,start,end);
        root = new btNode(a[p], null, null);howmany++;
-       if(p > start)root.left     =  quickSortBST(a,   start, p-1);
-       if(p < end)  root.right    =  quickSortBST(a,     p+1, end);
+       root.left     =  quickSortBST(a,   start, p-1);
+       root.right    =  quickSortBST(a,     p+1, end);
            
         }
        
        return root;
-   }//Does not Print correctly, it is weird
+    }/* Does not Print correctly, it is weird. Will Fix Later Use sortedArrayToBST for now */
     
     public void print()
     {
@@ -261,7 +261,7 @@ public class Intcoll6 {
             outs.println(t.info );
             printtree(t.right, outs);
 	}
-   }//End of Printtree method for PrintWriter OUTS   
+    }//End of Printtree method for PrintWriter OUTS   
     
     private static void printtree(btNode t)
     {    
@@ -291,7 +291,7 @@ public class Intcoll6 {
         num_nodes      = num_nodes + 1 + toarray(t.right, a, num_nodes+i+1);
        }
       return num_nodes;
-   }//End of toarray method
+    }//End of toarray method
     
     private static class btNode
     {
@@ -300,11 +300,11 @@ public class Intcoll6 {
        private btNode(int s, btNode lt, btNode rt)
        {
         info = s; left = lt;   right = rt;  
-       }
+        }
 
        private btNode()
        {
         info = 0; left = null; right = null;
-       }
-   }//End of Class btNode
+        }
+    }//End of Class btNode
 }
