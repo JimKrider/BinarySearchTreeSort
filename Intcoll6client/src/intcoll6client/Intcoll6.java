@@ -175,8 +175,8 @@ public class Intcoll6 {
             return null;
         int mid       = (start + end)/2;
         btNode root   = new btNode(a[mid], null, null);howmany++;
-       	root.left     = sortedArrayToBST(a,start,mid-1);
-        root.right    = sortedArrayToBST(a,mid+1,end);
+       	if(min < start)	root.left     = sortedArrayToBST(a,start,mid-1);
+        if(min > start)	root.right    = sortedArrayToBST(a,mid+1,end);
        
        return root;
     }/* Cuts the array in half then sorts. */
