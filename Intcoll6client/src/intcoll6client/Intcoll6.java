@@ -8,13 +8,14 @@ import java.io.*;
 
 /**
  *
- * @author Jimbo
+ * @author Jim Krider
+ * 
  */
 public class Intcoll6 {
     private int howmany;
     private btNode c;
 
-
+    
     public Intcoll6()
     {
       c = null;
@@ -145,7 +146,7 @@ public class Intcoll6 {
     }//End of Belongs Method   
     
     public int get_howmany() {return howmany;}//End of get_howmany   
-    
+    /* This print is not used in this program */
     public void print(String outname)
     {
       try
@@ -164,7 +165,7 @@ public class Intcoll6 {
     {
         int[] sort = new int[obj.howmany];   
         toarray(obj.c,sort,0);
-        //quicksort(sort,0,sort.length-1);      //Sorts the tree using quick
+        
         c = sortedArrayToBST(sort,0,sort.length-1);//sets this.c to the sorted tree
       
     }
@@ -173,11 +174,10 @@ public class Intcoll6 {
     {
        if(start > end)
             return null;
-        int mid       = (start + end)/2;
-        btNode root   = new btNode(a[mid], null, null);howmany++;
+       int mid       = (start + end)/2;
+       btNode root   = new btNode(a[mid], null, null);howmany++;
        root.left     = sortedArrayToBST(a,start,mid-1);
        root.right    = sortedArrayToBST(a,mid+1,end);
-       
        return root;
     }/* Cuts the array in half then sorts. */
     
