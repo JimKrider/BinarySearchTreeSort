@@ -31,7 +31,7 @@ public class Intcoll6client
          "Enter pos integer or neg integer to be inserted or 0 to quit:");
        value=keyboard.nextInt();
     }*/
-    System.out.println("\nThe values in collection P are:"); 
+    
     P.insert(10);
     P.insert(9);
     P.insert(8);
@@ -42,11 +42,13 @@ public class Intcoll6client
     P.insert(3);
     P.insert(2);
     P.insert(1);
-    Q.btSort(P);
-    System.out.println("\nThe values in collection P after it was omitted are:");
+    System.out.println("\nThe values in collection P before they are sorted:");
     P.print();
-    System.out.println("\n");
-    Q.print();
+    
+    P.btSort(P);
+    System.out.println("\nThe values in collection P after being sorted:");
+    P.print();
+    
  
   
     }//End of Main Class
